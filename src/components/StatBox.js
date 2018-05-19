@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import { StatBoxOuter, StatLabel, StatValue } from "styles"
 
 export default function StatBox({ stat }) {
   const statsMap = {
@@ -19,31 +19,9 @@ export default function StatBox({ stat }) {
     : stat.value
 
   return (
-    <Outer>
+    <StatBoxOuter>
       <StatLabel>{label}</StatLabel>
       <StatValue>{value}</StatValue>
-    </Outer>
+    </StatBoxOuter>
   )
 }
-
-const Outer = styled.div`
-  background-color: #f9f9fc;
-  box-sizing: border-box;
-`
-
-const StatLabel = styled.span`
-  display: block;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  margin-top: 39px;
-  margin-left: 25px;
-`
-
-const StatValue = styled.p`
-  font-weight: bold;
-  color: #1f6bef;
-  font-size: 50px;
-  margin-top: 10px;
-  margin-bottom: 27px;
-  margin-left: 25px;
-`
